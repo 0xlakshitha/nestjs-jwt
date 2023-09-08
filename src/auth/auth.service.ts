@@ -83,7 +83,6 @@ export class AuthService {
 
     async refreshTokens(userId: number, rt: string) {
         try {
-            
             const user = await this.prisma.user.findUnique({
                 where: {
                     id: userId
@@ -91,6 +90,8 @@ export class AuthService {
             })
 
             if (!user) throw new ForbiddenException('Access denied')
+
+            if(!user.hashedRt) throw new ForbiddenException('Access denied')
 
             const rtMatches = await bcrypt.compare(rt, user.hashedRt)
 
