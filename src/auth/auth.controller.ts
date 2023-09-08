@@ -4,6 +4,8 @@ import { AuthDto } from './dto';
 import { Tokens } from './types';
 import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
+import { AtGuard, RtGuard } from 'src/common/guards';
+import { GetCurrentUser, GetCurrentUserId } from 'src/common/decorators';
 
 @Controller('auth')
 export class AuthController {
@@ -23,19 +25,20 @@ export class AuthController {
         return this.authService.signinLocal(dto);
     }
 
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AtGuard)
     @Post('logout')
     @HttpCode(HttpStatus.OK)
-    logout(@Req() req: Request) {
-        const user = req.user
-        return this.authService.logout(user['sub']);
+    logout(@GetCurrentUserId() userId: number ) {
+        return this.authService.logout(userId);
     }
 
-    @UseGuards(AuthGuard('jwt-refresh'))
+    @UseGuards(RtGuard)
     @Post('refresh')
     @HttpCode(HttpStatus.OK)
-    refreshTokens(@Req() req: Request) {
-        const user = req.user
-        return this.authService.refreshTokens(user['sub'], user['refreshToken']);
+    refreshTokens(
+        @GetCurrentUserId() userId: number, 
+        @GetCurrentUser('refreshToken') refreshToken: string
+    ): Promise<Tokens> {
+        return this.authService.refreshTokens(userId, refreshToken);
     }
 }
