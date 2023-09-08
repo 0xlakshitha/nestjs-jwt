@@ -1,0 +1,117 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "nestjs-auth",
+    "dateExported": "2023-09-08T16:06:31.947Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "507f65a4-c365-456a-844f-a2b13deac976",
+            "colId": "2035df46-f586-4bd0-b559-a8ae51a6549b",
+            "containerId": "",
+            "name": "Local Signin",
+            "url": "http://localhost:3333/auth/local/signin",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-09-07T15:16:07.366Z",
+            "modified": "2023-09-08T15:52:07.420Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "oliver2@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d85c7a0b-ee36-47d1-8f9f-2fc68362fa04",
+            "colId": "2035df46-f586-4bd0-b559-a8ae51a6549b",
+            "containerId": "",
+            "name": "Local Signup",
+            "url": "http://localhost:3333/auth/local/signup",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-08T09:40:13.733Z",
+            "modified": "2023-09-08T15:51:15.850Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "oliver2@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "be79d8fd-25c1-413f-806b-036cf1310a2d",
+            "colId": "2035df46-f586-4bd0-b559-a8ae51a6549b",
+            "containerId": "",
+            "name": "Logout",
+            "url": "http://localhost:3333/auth/logout",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-08T15:45:14.255Z",
+            "modified": "2023-09-08T15:52:24.735Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoib2xpdmVyMkBnbWFpbC5jb20iLCJpYXQiOjE2OTQxODgzMjcsImV4cCI6MTY5NDE4OTIyN30.LrYGZ5Kks3z0Z3mZytSxCAIBtrye1KlAvRAB7e3dQes"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "oliver@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "623a0311-ac06-4e3a-a4f1-8b3686d7634c",
+            "colId": "2035df46-f586-4bd0-b559-a8ae51a6549b",
+            "containerId": "",
+            "name": "Refresh",
+            "url": "http://localhost:3333/auth/refresh",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-09-08T16:01:11.808Z",
+            "modified": "2023-09-08T16:04:04.066Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoib2xpdmVyMkBnbWFpbC5jb20iLCJpYXQiOjE2OTQxODkwMTEsImV4cCI6MTY5NDc5MzgxMX0.UTk4RVVr8iAEvrX-UDxFZhzbvNxQhIsQlo5Bb0kIPjo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
